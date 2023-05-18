@@ -1,0 +1,120 @@
+[versions]
+# Gradle Plugins
+androidGradlePlugin = "8.0.1"
+kotlin = "1.7.20"
+secretsGradlePlugin = "2.0.1"
+ksp = "1.8.10-1.0.9"
+
+# Support
+appcompat = "1.6.1"
+coreKtx = "1.9.0"
+
+# Arch Components
+lifecycle = "2.5.1"
+
+# Kotlin Coroutines
+kotlinCoroutines = "1.6.4"
+
+# Networking
+ktorVersion = "1.6.2"
+serializationVersion = "1.2.2"
+
+#Database
+roomVersion = "2.5.1"
+
+
+
+
+
+# UI
+composeVersion = "1.3.2"
+composeActivity = "1.3.1"
+navigationCompose = "2.4.0-alpha04"
+materialDesign = "1.7.0"
+composeBom = "2023.04.01"
+
+
+# Hilt
+hilt = "2.45"
+hiltCompose = "1.0.0"
+
+
+# Utils
+
+javaInject = "1"
+
+
+
+[libraries]
+# Support
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+coreKtx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+
+# Kotlin
+kotlin = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
+coroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinCoroutines" }
+coroutinesAndroid = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinCoroutines" }
+
+# Arch Components
+viewModel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifeData = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
+lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+
+
+# Networking
+ktorCore = {module = "io.ktor:ktor-client-core" , version.ref = "ktorVersion" }
+clientSerialization = { module = "io.ktor:ktor-client-serialization" , version.ref = "ktorVersion" }
+ktorAndroid = { module = "io.ktor:ktor-client-android" , version.ref = "ktorVersion" }
+ktorJson = { module = "io.ktor:ktor-client-json" , version.ref = "ktorVersion" }
+ktorLogging = { module = "io.ktor:ktor-client-logging" , version.ref = "ktorVersion" }
+serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serializationVersion" }
+
+#Database
+room = {  module = "androidx.room:room-runtime" , version.ref = "roomVersion" }
+roomKtx = {  module = "androidx.room:room-ktx" , version.ref = "roomVersion" }
+roomCompiler = {  module = "androidx.room:room-compiler" , version.ref = "roomVersion" }
+
+# UI
+composeBom = {module = "androidx.compose:compose-bom" , version.ref = "composeBom"}
+composeUi = { module = "androidx.compose.ui:ui"}
+composeTools = { module = "androidx.compose.ui:ui-tooling"}
+pewviewTools = { module = "androidx.compose.ui:ui-tooling-preview"}
+composeMaterial = { module = "androidx.compose.material3:material3"}
+composeLivedata = { module = "androidx.compose.runtime:runtime-livedata" }
+composeActivity = { module = "androidx.activity:activity-compose",  version.ref = "composeActivity" }
+navigationCompose = { module = "androidx.navigation:navigation-compose" , version.ref = "navigationCompose" }
+
+
+# Hilt
+hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hiltDaggerCompiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+hiltNavigationCompose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltCompose" }
+
+
+# Utils
+javaInject = { module = "javax.inject:javax.inject", version.ref = "javaInject" }
+
+
+
+
+[bundles]
+archComponents = ["viewModel", "lifeData", "lifecycle"]
+networking = ["ktorAndroid", "ktorCore", "ktorJson", "ktorLogging", "clientSerialization"]
+jetpackCompost = ["composeActivity", "composeUi", "composeMaterial", "composeTools", "pewviewTools", "navigationCompose", "composeLivedata"]
+kotlinCoroutines = ["coroutinesCore", "coroutinesAndroid"]
+room = ["room" , "roomKtx"]
+
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin-plugin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = {id = "com.google.devtools.ksp" , version.ref = "ksp"}
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+scripting = { id = "org.jetbrains.kotlin.plugin.scripting", version.ref = "kotlin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secretsGradlePlugin" }
+
+
