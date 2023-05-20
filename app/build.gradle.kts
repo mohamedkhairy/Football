@@ -5,8 +5,6 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.kapt)
     alias(libs.plugins.hilt)
-//    kotlin("plugin.serialization") version "1.8.21"
-
 
 }
 

@@ -2,7 +2,6 @@
 # Gradle Plugins
 androidGradlePlugin = "8.0.1"
 kotlin = "1.7.20"
-secretsGradlePlugin = "2.0.1"
 ksp = "1.8.10-1.0.9"
 
 # Support
@@ -67,6 +66,7 @@ clientSerialization = { module = "io.ktor:ktor-client-serialization" , version.r
 ktorAndroid = { module = "io.ktor:ktor-client-android" , version.ref = "ktorVersion" }
 ktorJson = { module = "io.ktor:ktor-client-json" , version.ref = "ktorVersion" }
 ktorLogging = { module = "io.ktor:ktor-client-logging" , version.ref = "ktorVersion" }
+ktorAuth = { module = "io.ktor:ktor-client-auth" , version.ref = "ktorVersion" }
 serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serializationVersion" }
 
 #Database
@@ -83,6 +83,8 @@ composeMaterial = { module = "androidx.compose.material3:material3"}
 composeLivedata = { module = "androidx.compose.runtime:runtime-livedata" }
 composeActivity = { module = "androidx.activity:activity-compose",  version.ref = "composeActivity" }
 navigationCompose = { module = "androidx.navigation:navigation-compose" , version.ref = "navigationCompose" }
+composeRuntime = { module = "androidx.compose.runtime:runtime"}
+
 
 
 # Hilt
@@ -99,7 +101,7 @@ javaInject = { module = "javax.inject:javax.inject", version.ref = "javaInject" 
 
 [bundles]
 archComponents = ["viewModel", "lifeData", "lifecycle"]
-networking = ["ktorAndroid", "ktorCore", "ktorJson", "ktorLogging", "clientSerialization"]
+networking = ["ktorAndroid", "ktorCore", "ktorJson", "ktorLogging", "clientSerialization", "ktorAuth"]
 jetpackCompost = ["composeActivity", "composeUi", "composeMaterial", "composeTools", "pewviewTools", "navigationCompose", "composeLivedata"]
 kotlinCoroutines = ["coroutinesCore", "coroutinesAndroid"]
 room = ["room" , "roomKtx"]
@@ -115,6 +117,5 @@ kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 scripting = { id = "org.jetbrains.kotlin.plugin.scripting", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
-secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secretsGradlePlugin" }
 
 

@@ -14,3 +14,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Football"
 include(":app")
+include(":core")
+include(":core:network")
+include(":core:database")
+include(":features")
+include(":features:home")
