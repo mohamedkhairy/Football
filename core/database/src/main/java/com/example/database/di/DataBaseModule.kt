@@ -14,15 +14,11 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DataBaseModule {
 
-//    @Provides
-//    @Singleton
-//    fun provideDatabase(@ApplicationContext context: Context) : DatabaseManager =
-//        Room.databaseBuilder(context, DatabaseManager::class.java, "football_database")
-//            .build()
+    @Provides
+    @Singleton
+    fun provideDatabase(@ApplicationContext context: Context) : DatabaseManager =
+        Room.databaseBuilder(context, DatabaseManager::class.java, "football_database")
+            .build()
 
-//    @Provides
-//    @Singleton
-//    fun providePhotosDao(database: PhotosDatabase) : PhotosDao =
-//        database.favoritesPhotosDao()
 
 }

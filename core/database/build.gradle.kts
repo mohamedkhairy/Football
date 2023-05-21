@@ -9,6 +9,7 @@ plugins {
 
 dependencies {
 
+    "implementation"(project(":features:home"))
 
     "implementation"(libs.bundles.room)
     "ksp"(libs.roomCompiler)
