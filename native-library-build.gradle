@@ -1,0 +1,16 @@
+// build.gradle for android libraries that contain UI
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+
+android {
+
+    externalNativeBuild {
+        cmake {
+            path "C:\\Users\\MoahmedKhairyAbdella\\StudioProjects\\Football\\features\\home\\cpp\\CMakeLists.txt"
+            version "3.22.1"
+        }
+    }
+
+}
