@@ -75,6 +75,10 @@ dependencies {
     implementation(libs.bundles.jetpackCompost)
 
 
+//    modules
+    implementation(project(":core:utils"))
+    implementation(project(":features:home"))
+
 
     testImplementation ("junit:junit:4.13.2")
     androidTestImplementation ("androidx.test.ext:junit:1.1.3")
