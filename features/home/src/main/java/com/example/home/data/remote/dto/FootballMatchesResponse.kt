@@ -98,7 +98,7 @@ data class Referee(
     @SerialName("name")
     val name: String,
     @SerialName("nationality")
-    val nationality: String,
+    val nationality: String?,
     @SerialName("role")
     val role: String
 )
@@ -110,9 +110,9 @@ data class Score(
     @SerialName("fullTime")
     val fullTime: FullTime,
     @SerialName("halfTime")
-    val halfTime: HalfTime,
+    val halfTime: HalfTime?,
     @SerialName("winner")
-    val winner: String
+    val winner: String?
 )
 
 @Serializable
@@ -131,15 +131,15 @@ data class Season(
 @Serializable
 data class FullTime(
     @SerialName("awayTeam")
-    val awayTeam: Int,
+    val awayTeam: Int?,
     @SerialName("homeTeam")
-    val homeTeam: Int
+    val homeTeam: Int?
 )
 
 @Serializable
 data class HalfTime(
     @SerialName("awayTeam")
-    val awayTeam: Int,
+    val awayTeam: Int?,
     @SerialName("homeTeam")
-    val homeTeam: Int
+    val homeTeam: Int?
 )

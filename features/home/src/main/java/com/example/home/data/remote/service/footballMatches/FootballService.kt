@@ -1,4 +1,4 @@
-package com.example.home.data.remote.service.galleryPhotos
+package com.example.home.data.remote.service.footballMatches
 
 import com.example.home.data.remote.dto.FootballMatchesResponse
 

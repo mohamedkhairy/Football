@@ -18,3 +18,10 @@ add_library( # Sets the name of the library.
 
         # Provides a relative path to your source file(s).
         native-lib.cpp)
+
+
+find_library(log-lib
+        log )
+
+target_link_libraries(native-lib
+        ${log-lib})

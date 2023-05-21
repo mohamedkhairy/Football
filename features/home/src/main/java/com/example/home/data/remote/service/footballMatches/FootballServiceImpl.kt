@@ -1,4 +1,4 @@
-package com.example.home.data.remote.service.galleryPhotos
+package com.example.home.data.remote.service.footballMatches
 
 import com.example.home.data.remote.dto.FootballMatchesResponse
 import io.ktor.client.*
@@ -12,11 +12,17 @@ class FootballServiceImpl @Inject constructor(val httpClient: HttpClient): Footb
     }
 
     external fun getBaseUrlFromNative(): String
+    external fun getApiKeyName(): String
+    external fun getApiKeyValue(): String
 
 
+    private val endpointUrl = getBaseUrlFromNative()+"competitions/2021/matches/"
     override suspend fun callFootballMatches(): FootballMatchesResponse {
         return httpClient.get<FootballMatchesResponse> {
-            url(getBaseUrlFromNative())
+            url(endpointUrl)
+            headers {
+                append(getApiKeyName(), getApiKeyValue())
+            }
         }
     }
 
