@@ -1,23 +1,18 @@
 package com.example.network.di
 
-import com.example.network.Headers
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import io.ktor.client.*
 import io.ktor.client.engine.android.*
-import io.ktor.client.features.auth.Auth
-import io.ktor.client.features.auth.providers.BasicAuthCredentials
-import io.ktor.client.features.auth.providers.basic
-import io.ktor.client.features.defaultRequest
 import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
 import io.ktor.client.features.logging.*
-import io.ktor.client.request.header
-import io.ktor.http.auth.AuthScheme
+import kotlinx.serialization.ExperimentalSerializationApi
 import javax.inject.Singleton
 
+@OptIn(ExperimentalSerializationApi::class)
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
@@ -30,6 +25,8 @@ object NetworkModule {
                     serializer = KotlinxSerializer(
                         kotlinx.serialization.json.Json  {
                             ignoreUnknownKeys = true // if the server sends extra fields, ignore them
+                            coerceInputValues = true
+                            explicitNulls = false
                         }
                     )
                 }
@@ -37,9 +34,6 @@ object NetworkModule {
                     logger = Logger.DEFAULT
                     level = LogLevel.ALL
                 }
-            defaultRequest {
-                header(Headers.getApiKeyName(), Headers.getApiKeyValue())
-            }
             }
 
     }

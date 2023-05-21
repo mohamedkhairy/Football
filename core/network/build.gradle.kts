@@ -7,4 +7,6 @@ dependencies {
 
 
     "implementation"(libs.bundles.networking)
+    "implementation"(libs.serialization)
+
 }
