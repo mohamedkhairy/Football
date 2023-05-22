@@ -9,9 +9,9 @@ import javax.inject.Inject
 
 class FavoriteMatchUseCase @Inject constructor(
     private val favoritesMatchesRepository: FavoritesMatchesRepository
-) : FlowUseCase<Unit, List<Match>?>(Dispatchers.IO) {
+) : FlowUseCase<Unit, MutableList<Match>?>(Dispatchers.IO) {
 
-    override fun execute(parameters: Unit): Flow<List<Match>?> =
+    override fun execute(parameters: Unit): Flow<MutableList<Match>?> =
         flow {
             val result = favoritesMatchesRepository.getAllFavoritesMatches()
 //            result?.let {

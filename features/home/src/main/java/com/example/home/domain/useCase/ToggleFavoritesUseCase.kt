@@ -26,8 +26,6 @@ class ToggleFavoritesUseCase @Inject constructor(
             } catch (e: Exception) {
                 emit(DataState.Error(e.message))
             }
-        }.onStart {
-            emit(DataState.Loading())
         }
             .flowOn(Dispatchers.IO)
 
@@ -43,8 +41,6 @@ class ToggleFavoritesUseCase @Inject constructor(
             } catch (e: Exception) {
                 emit(DataState.Error(e.message))
             }
-        }.onStart {
-            emit(DataState.Loading())
         }
             .flowOn(Dispatchers.IO)
 

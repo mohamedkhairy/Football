@@ -4,6 +4,6 @@ import com.example.home.domain.entity.Match
 
 interface FavoritesMatchesRepository {
 
-    suspend fun getAllFavoritesMatches(): List<Match>?
+    suspend fun getAllFavoritesMatches(): MutableList<Match>?
 
 }

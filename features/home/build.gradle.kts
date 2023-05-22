@@ -24,6 +24,7 @@ dependencies {
     "implementation"(libs.bundles.kotlinCoroutines)
     "implementation"(libs.bundles.room)
     "ksp"(libs.roomCompiler)
+    "implementation"(project(":core:database"))
     "implementation"(project(":core:network"))
     "implementation"(project(":core:utils"))
 

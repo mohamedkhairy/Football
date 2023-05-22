@@ -1,6 +1,6 @@
 package com.example.home.di
 
-import com.example.home.data.local.MatchesDao
+import com.example.database.dbManager.MatchesDao
 import com.example.home.data.repository.favorites.FavoritesMatchesRepositoryImp
 import com.example.home.domain.repository.FavoritesMatchesRepository
 import dagger.Module

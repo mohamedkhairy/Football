@@ -1,6 +1,7 @@
 package com.example.home.di
 
 
+import com.example.database.dbManager.MatchesDao
 import com.example.home.data.remote.service.footballMatches.FootballService
 import com.example.home.data.repository.matches.AllFootballMatchesRepositoryImp
 import com.example.home.domain.repository.AllFootballMatchesRepository
@@ -15,8 +16,8 @@ import dagger.hilt.android.components.ViewModelComponent
 object FootballMatchesRepositoryModule {
 
     @Provides
-    fun provideFootballMatchesRepository( clientService: FootballService) : AllFootballMatchesRepository {
-        return AllFootballMatchesRepositoryImp(clientService)
+    fun provideFootballMatchesRepository( clientService: FootballService , matchesDao: MatchesDao) : AllFootballMatchesRepository {
+        return AllFootballMatchesRepositoryImp(clientService, matchesDao)
     }
 
 
