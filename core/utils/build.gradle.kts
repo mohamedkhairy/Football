@@ -5,6 +5,8 @@ apply {
 
 dependencies {
 
-
+    val composeBom = platform(libs.composeBom)
+    "implementation"(composeBom)
+    "implementation"(libs.bundles.jetpackCompost)
 
 }

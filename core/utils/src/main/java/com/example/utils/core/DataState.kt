@@ -1,7 +1,5 @@
 package com.example.utils.core
 
-import com.example.core.domain.core.ProgressBarState
-
 
 sealed class DataState<T> {
 
@@ -14,9 +12,7 @@ sealed class DataState<T> {
         val data: T? = null
     ): DataState<T>()
 
-    data class Loading<T>(
-        val progressBarState: ProgressBarState = ProgressBarState.Idle
-    ): DataState<T>()
+    class Loading<T>() : DataState<T>()
 
 
 
