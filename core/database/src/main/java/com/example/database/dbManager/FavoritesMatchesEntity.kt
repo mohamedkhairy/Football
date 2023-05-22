@@ -1,4 +1,4 @@
-package com.example.home.data.local.entity
+package com.example.database.dbManager
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -9,5 +9,6 @@ data class FavoritesMatchesEntity (
     val id: Int,
     val teams: String,
     val result: String,
-    val date: String
+    val date: String,
+    val winner: String?
 )
